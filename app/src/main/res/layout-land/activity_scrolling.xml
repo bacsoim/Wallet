@@ -7,8 +7,6 @@
     android:fitsSystemWindows="true"
     tools:context=".ScrollingActivity">
 
-
-
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
@@ -17,8 +15,6 @@
         android:theme="@style/AppTheme.AppBarOverlay">
 
     </com.google.android.material.appbar.AppBarLayout>
-
-
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerBudget"
@@ -45,17 +41,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         app:layout_anchor="@id/app_bar"
-        app:layout_anchorGravity="bottom|center_horizontal"
+        app:layout_anchorGravity="bottom|center"
         app:srcCompat="@drawable/delete" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/sumBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_anchor="@+id/app_bar"
-        app:layout_anchorGravity="center"
-        app:srcCompat="@drawable/sum"
-        />
 
     <com.google.android.material.appbar.CollapsingToolbarLayout
         android:id="@+id/toolbar_layout"
@@ -63,7 +50,7 @@
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
         app:contentScrim="?attr/colorPrimary"
-        app:layout_anchor="@+id/app_bar"
+        app:layout_anchor="@+id/toolbar_layout"
         app:layout_anchorGravity="center"
         app:layout_scrollFlags="scroll|exitUntilCollapsed"
         app:toolbarId="@+id/toolbar">
@@ -76,7 +63,5 @@
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     </com.google.android.material.appbar.CollapsingToolbarLayout>
-
-
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

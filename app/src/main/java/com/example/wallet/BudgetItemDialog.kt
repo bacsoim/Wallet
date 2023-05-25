@@ -11,6 +11,7 @@ import androidx.fragment.app.DialogFragment
 import com.example.wallet.data.BudgetItem
 
 
+
 class BudgetItemDialog : DialogFragment() {
 
     interface BudgetItemDialogHandler {
@@ -59,8 +60,8 @@ class BudgetItemDialog : DialogFragment() {
 
         etName = rootView.etName
         etPrice = rootView.etPrice
-        spinnerCategory = rootView.spinnerCategory
-        var categoryAdapter = ArrayAdapter.createFromResource(
+       // spinnerCategory = rootView.spinnerCategory
+       /* var categoryAdapter = ArrayAdapter.createFromResource(
             requireActivity(),
             R.array.category_array,
             android.R.layout.simple_spinner_item
@@ -69,7 +70,7 @@ class BudgetItemDialog : DialogFragment() {
             android.R.layout.simple_spinner_dropdown_item
         )
         spinnerCategory.adapter = categoryAdapter
-
+        */
         builder.setView(rootView)
 
         if (EDIT_MODE) {
@@ -118,9 +119,9 @@ class BudgetItemDialog : DialogFragment() {
                 null,
                 etName.text.toString(),
                 etPrice.text.toString().toInt(),
-                spinnerCategory.selectedItemPosition,
+                //spinnerCategory.selectedItemPosition,
                 false,
-                "Demo"
+                //"Demo"
             )
         )
     }
@@ -130,7 +131,7 @@ class BudgetItemDialog : DialogFragment() {
 
         budgetItemToEdit.description = etName.text.toString()
         budgetItemToEdit.value = etPrice.text.toString().toInt()
-        budgetItemToEdit.category = spinnerCategory.selectedItemPosition
+       // budgetItemToEdit.category = spinnerCategory.selectedItemPosition
 
         budgetItemHandler.budgetItemUpdated(budgetItemToEdit)
     }

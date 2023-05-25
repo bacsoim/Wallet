@@ -32,6 +32,10 @@ class ScrollingActivity :
             BudgetItemDialog().show(supportFragmentManager, "TAG_SHOP_DIALOG")
         }
 
+        binding.del.setOnClickListener {
+            BudgetItemDialog().show(supportFragmentManager, "TAG_SHOP_DIALOG")
+        }
+
     }
 
 

@@ -17,5 +17,5 @@ interface BudgetDao{
     fun updateBudget(todo: BudgetItem)
 
     @Query("DELETE FROM description")
-    fun deleteAllBudget()
+    fun deleteAllBudget(): Unit
 }

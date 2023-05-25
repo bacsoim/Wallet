@@ -11,5 +11,5 @@ import java.io.Serializable
     @ColumnInfo(name = "description") var description: String,
     @ColumnInfo(name = "value") var value: Number,
    // @ColumnInfo(name = "position") var selectedItemPosition: Int,
-    @ColumnInfo(name = "type") var category: Int
+    @ColumnInfo(name = "type") var category: Boolean
 ): Serializable

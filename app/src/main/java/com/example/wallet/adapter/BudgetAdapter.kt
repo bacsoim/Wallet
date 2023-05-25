@@ -17,6 +17,7 @@ import com.example.wallet.databinding.BudgetItemBinding
 
 
 
+
 class BudgetAdapter : RecyclerView.Adapter<BudgetAdapter.ViewHolder> {
 
     private val items = mutableListOf<BudgetItem>()
@@ -67,7 +68,7 @@ class BudgetAdapter : RecyclerView.Adapter<BudgetAdapter.ViewHolder> {
 
     fun addItem(item: BudgetItem) {
         items.add(item)
-        //notifyDataSetChanged()
+
         notifyItemInserted(items.lastIndex)
     }
 
@@ -84,32 +85,29 @@ class BudgetAdapter : RecyclerView.Adapter<BudgetAdapter.ViewHolder> {
             budgetItemBinding.tvName.text = budgetItem.description
             budgetItemBinding.tvPrice.text = budgetItem.value.toString()
 
-            when (budgetItem.category) {
-                0 -> {
-                    budgetItemBinding.ivItemLogo.setImageResource(R.drawable.cash)
-                }
-
-
-                1 -> {
-                    budgetItemBinding.ivItemLogo.setImageResource(R.drawable.income)
-                }
+            if (budgetItem.category == true) {
+                (budgetItem.value == budgetItem.value);
+                budgetItemBinding.ivItemLogo.setImageResource(R.drawable.income)
+            } else {
+                (budgetItem.value == -budgetItem.value);
+                budgetItemBinding.ivItemLogo.setImageResource(R.drawable.cash)
             }
-            budgetItemBinding.btnDelete.setOnClickListener{
+
+
+            budgetItemBinding.btnDelete.setOnClickListener {
                 deleteItem(adapterPosition)
+
+                budgetItemBinding.btnEdit.setOnClickListener {
+                    (context as ScrollingActivity).showEditDialog(BudgetItem(adapterPosition))
+
+                }
+
             }
 
-            budgetItemBinding.btnEdit.setOnClickListener{
-                (context as ScrollingActivity).showEditDialog(adapterPosition)
-
-            }
 
         }
-
-
-
-
-
-    }
+        }
 }
+
 
 
