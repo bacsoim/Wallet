@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Wallet</string>
+    <string name="large_text">
+
+    </string>
+    <string-array name="category_array">
+        <item>Income</item>
+        <item>Expense</item>
+
+    </string-array>
+    <string name="action_settings">Settings</string>
+</resources>
